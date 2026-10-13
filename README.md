@@ -46,4 +46,6 @@ The API integration test covers persistence, friendship state, review and photo 
 
 The full social application requires a Node.js 26 server and a writable persistent volume for SQLite and uploaded photos. Build a single-container image with `docker build -t foodfolk .` and run it with a persistent volume mounted at `/data`; the Node server serves both the built frontend and `/api` from one HTTPS origin. Keep the volume across restarts and back it up. Set `NODE_ENV=production` in the hosting environment. A static deployment or a serverless function with temporary disk does not provide persistent social accounts, reviews or uploads. Use a durable database and private object storage before adapting the API to a storage-less serverless platform.
 
+`render.yaml` defines a Singapore-based Render web service with a 1 GB persistent disk. Review Render's current compute and storage charges before creating the service; the smallest always-on plan is paid, and the free plan cannot attach persistent storage. The Blueprint is configured to avoid automatic deploys after setup.
+
 Do not commit `.env.local`, tokens, `.data/`, or uploaded images.

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: foodfolk
+    runtime: docker
+    plan: 0.5c-512mb
+    region: singapore
+    autoDeploy: false
+    healthCheckPath: /health
+    disk:
+      name: foodfolk-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FOOD_DATA_DIR
+        value: /data

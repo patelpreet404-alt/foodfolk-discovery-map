@@ -9,6 +9,8 @@ import type { FriendsResponse, Privacy, Restaurant, User } from './types'
 import { AuthPanel, FriendsPanel, ProfilePanel } from './SocialPanels'
 
 const CITY = { lat: 19.076, lng: 72.8777 }
+const DEMO_MODE = import.meta.env.MODE === 'demo'
+const HOME_URL = DEMO_MODE ? import.meta.env.BASE_URL : '/'
 type Scope = 'all' | 'friends' | 'saved' | 'passport'
 type DiscoverHit = Pick<Restaurant, 'id' | 'name' | 'cuisine' | 'address' | 'lat' | 'lng' | 'sourceUrl' | 'source'>
 
@@ -313,10 +315,11 @@ export default function FoodMap() {
   return <main className="foodmap-page" aria-label="Food Map">
     <div className="fm-experience">
       <header className="fm-header">
-        <a className="fm-brand" href="/" aria-label="Cook Along home"><span className="fm-brand-icon"><ForkKnife size={19}/></span><span>food<span>folk</span></span></a>
+        <a className="fm-brand" href={HOME_URL} aria-label="Cook Along home"><span className="fm-brand-icon"><ForkKnife size={19}/></span><span>food<span>folk</span></span></a>
         <div className="fm-location"><span className="fm-location-dot"/><span>MUMBAI <i>·</i> MAHARASHTRA</span><ChevronDown size={14}/></div>
         <div className="fm-header-actions"><button className="fm-header-help" aria-label="Search for people and restaurants" onClick={() => { setSearchOpen(true); document.querySelector<HTMLInputElement>('.fm-search-input')?.focus() }}><Search size={17}/><span>Explore your people & places</span></button>{user ? <button className="fm-header-avatar" aria-label={`Open ${user.name}'s food passport`} onClick={() => setPanel('profile')}><Avatar user={user}/></button> : <button className="fm-header-signin" onClick={() => setAuthOpen(true)}>Sign in <ArrowUpRight size={15}/></button>}</div>
       </header>
+      {DEMO_MODE && <div className="fm-demo-banner" role="note" style={{ flex: 'none', minHeight: 34, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, padding: '5px 16px', background: '#eee3d4', borderBottom: '1px solid #ded1be', color: '#6c5743', font: "500 10px 'DM Sans',sans-serif", textAlign: 'center' }}><strong style={{ padding: '3px 6px', background: '#ce4b27', color: '#fffdf9', fontSize: 8, letterSpacing: '.1em' }}>DEMO</strong><span>Sample accounts and activity. Changes stay in this browser — don’t enter real credentials or personal details.</span></div>}
       <div className="fm-workspace">
         <aside className={`fm-sidebar${collapsed ? ' is-collapsed' : ''}`} aria-label="Explore food map">
           <button className="fm-sidebar-toggle" aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} onClick={() => setCollapsed(v => !v)}><Menu size={17}/><ChevronRight size={14}/></button>

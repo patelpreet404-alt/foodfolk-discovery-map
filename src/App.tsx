@@ -48,7 +48,7 @@ export default function App() {
   const wake = useRef<WakeLockSentinel | null>(null)
   useEffect(() => { window.scrollTo({ top: 0 }) }, [session.phase, resume])
   const caseStudy = window.location.pathname.replace(/\/$/,'') === '/case-study'
-  const foodMap = window.location.pathname.replace(/\/$/,'') === '/food-map'
+  const foodMap = import.meta.env.MODE === 'demo' || window.location.pathname.replace(/\/$/,'') === '/food-map'
   const act = useCallback((action: Action) => {
     setSession(s => transition(s, action, Date.now()))
     if (['next', 'previous', 'goStep'].includes(action.type)) window.scrollTo({ top: 0 })

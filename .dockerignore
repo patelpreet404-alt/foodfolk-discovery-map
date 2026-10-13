@@ -1,0 +1,9 @@
+node_modules
+.data
+.env*
+.vercel
+.git
+.playwright-cli
+playwright-report
+test-results
+dist

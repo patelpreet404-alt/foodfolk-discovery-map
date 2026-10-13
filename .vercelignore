@@ -1,0 +1,8 @@
+node_modules
+src
+public
+*.md
+tests
+test-results
+playwright-report
+.playwright-cli

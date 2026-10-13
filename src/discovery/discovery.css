@@ -1,0 +1,87 @@
+.restaurant-discovery { background:var(--paper); margin:24px 4.5% 64px; padding-top:24px; border-top:2px solid var(--ink); }
+.discovery-rule {display:flex; justify-content:space-between; align-items:center; gap:20px; color:var(--ink)}
+.discovery-rule>span {display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink)}
+.discovery-heading {display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin:32px 0 36px}
+.discovery-heading h2 {font:800 clamp(54px,6.5vw,96px)/.9 var(--display);text-transform:uppercase;color:var(--accent);max-width:900px;overflow-wrap:anywhere}
+.discovery-heading h2 span {color:var(--accent)}
+.discovery-heading>div>p {font-size:19px;margin-top:22px}
+.discovery-heading-note {border-left:1px solid var(--ink);padding-left:24px;min-width:240px}
+.discovery-heading-note>p {font-size:15px!important}
+.discovery-location {border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:24px 0 18px}
+.discovery-location-row {display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.discover-near {min-height:62px;padding:16px 24px}
+.discovery-or {font-size:13px;align-self:center}
+.discovery-city-form {flex:1;min-width:235px}
+.discovery-city-form label,.discovery-radius label {display:block;font-size:12px;font-weight:700;margin-bottom:8px}
+.discovery-city-field {display:flex;align-items:center;gap:10px;border-bottom:2px solid var(--ink);min-height:58px}
+.discovery-city-field input {font:inherit;min-width:0;width:100%;border:0;background:transparent;color:var(--ink);padding:14px 0;outline-offset:2px;border-radius:0}
+.discovery-city-field input::placeholder {color:#504738;opacity:1}
+.discovery-city-field button {padding:10px;background:transparent;border:0;min-width:48px}
+.discovery-radius select {font:600 14px 'DM Sans',sans-serif;background:var(--surface);border:1px solid var(--ink);color:var(--ink);padding:12px;min-height:58px;max-width:190px;border-radius:2px}
+.discovery-clear {background:transparent;border:0;min-height:58px;font-size:12px;padding:8px}
+.discovery-privacy {font-size:12px;line-height:1.6;max-width:850px;margin-top:18px}
+.discovery-city-choices {margin:24px 0 8px}
+.discovery-city-choices>p {font-weight:700;margin-bottom:8px}
+.discovery-city-choices ul {display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.discovery-city-choices button {width:100%;justify-content:space-between;text-align:left;border:1px solid var(--ink);background:var(--surface);padding:14px 18px;min-height:58px}
+.discovery-city-choices button:hover {background:var(--ink);color:var(--paper)}
+.discovery-invitation {display:grid;grid-template-columns:1fr 1fr;min-height:350px;padding:40px 0 24px;gap:40px;overflow:hidden}
+.discovery-number {font:700 32px var(--display);color:var(--ink)}
+.discovery-invitation h3 {font:700 clamp(32px,3.8vw,56px)/1 var(--display);text-transform:uppercase;color:var(--accent);margin:14px 0 22px}
+.discovery-invitation-copy>p {max-width:470px;font-size:17px}
+.discovery-invitation-copy .discovery-small {font-size:12px;margin-top:24px;max-width:390px}
+.discovery-still-life {position:relative;min-height:300px;perspective:900px}
+.discovery-still-life .food-art {inset:0 -5% 0 0;width:105%;height:100%;filter:drop-shadow(10px 18px 8px #65381c1c);animation:discovery-float 3.8s ease-in-out 1}
+.discovery-still-life .food-art-reveal,.restaurant-photo-placeholder .food-art-reveal {animation:none}
+.discovery-stamp {position:absolute;bottom:8%;left:0;display:grid;place-content:center;width:112px;height:112px;border-radius:50%;border:1px solid var(--ink);background:var(--paper);font-size:13px;font-weight:700;line-height:1.3;text-align:center;transform:rotate(-12deg);box-shadow:4px 6px 9px #d5360c18}
+.discovery-status {display:flex;gap:24px;align-items:flex-start;min-height:240px;padding:48px 28px;margin-top:24px;background:var(--surface);border-left:4px solid var(--ink)}
+.discovery-status>svg {color:var(--ink)}
+.discovery-status h3 {font:700 clamp(30px,3vw,44px)/1 var(--display);text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.discovery-status p {max-width:600px}
+.discovery-status button {margin-top:20px}
+.discovery-status-loading>svg {animation:discovery-spin 1.6s linear 3}
+.discovery-results-context {font-size:12px;margin-top:22px}
+.restaurant-carousel-heading {display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--ink);padding:22px 0}
+.restaurant-carousel-heading>p {font:700 29px var(--display);text-transform:uppercase;color:var(--accent)}
+.restaurant-carousel-controls {display:flex;gap:16px;align-items:center;white-space:nowrap}
+.restaurant-carousel-controls button {height:60px;width:60px;border:1px solid var(--ink);border-radius:50%;color:var(--ink);background:transparent}
+.restaurant-carousel-controls button:hover:not(:disabled) {background:var(--accent);color:var(--ink);transform:translateY(-2px)}
+.restaurant-carousel-controls>span {font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;min-width:54px;text-align:center}
+.restaurant-carousel-controls>span>span:not(.sr-only) {font-weight:400}
+.restaurant-spotlight {display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,5vw,72px);padding:32px 0 38px;animation:restaurant-reveal .38s cubic-bezier(.16,1,.3,1)}
+.restaurant-photo {margin:0;min-width:0}
+.restaurant-photo>img {width:100%;height:440px;object-fit:cover;object-position:center top;border-radius:2px 36% 2px 2px;box-shadow:9px 12px 18px #d5360c20;background:var(--surface)}
+.restaurant-photo figcaption {margin-top:22px;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.restaurant-photo-placeholder {position:relative;background:var(--paper);height:440px;overflow:hidden;border-radius:2px 36% 2px 2px;box-shadow:9px 12px 18px #d5360c20}
+.restaurant-photo-placeholder>div {position:absolute;inset:0;opacity:1}
+.restaurant-photo-placeholder .food-art {inset:-2% -20%;width:140%;height:80%}
+.restaurant-photo-placeholder>p {position:absolute;bottom:28px;left:28px;font:700 clamp(34px,3vw,48px)/1 var(--display);text-transform:uppercase;color:var(--accent);padding:12px;background:var(--paper)}
+.restaurant-photo-placeholder>p>svg {display:block;margin-bottom:10px}
+.restaurant-kicker {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:18px}
+.restaurant-kicker>span:last-child {display:flex;align-items:center;gap:5px;font-size:12px;letter-spacing:0;white-space:nowrap}
+.restaurant-story {min-width:0}
+.restaurant-story h3 {font:800 clamp(42px,4.2vw,68px)/.95 var(--display);color:var(--accent);text-transform:uppercase;overflow-wrap:anywhere}
+.restaurant-neighborhood {font-size:13px;margin-top:14px;text-transform:capitalize}
+.culinary-fact {margin:26px 0;border-top:1px solid var(--ink);padding-top:22px;min-height:165px}
+.culinary-fact .editorial-label {font-size:10px;margin-bottom:14px}
+.culinary-fact-text {font-size:clamp(18px,1.65vw,23px);line-height:1.5;max-width:40ch}
+.culinary-fact>a {display:inline-flex;align-items:center;gap:8px;font-size:12px;min-height:44px;margin-top:8px}
+.signature-dish {display:flex;flex-direction:column;font-size:14px;margin-top:20px}
+.restaurant-explore {display:inline-flex;text-decoration:none;gap:32px;min-height:62px;padding:16px 22px}
+.restaurant-distance-note {font-size:11px;line-height:1.6;margin-top:18px;max-width:470px}
+.restaurant-map-source {display:inline-flex;align-items:center;gap:6px;font-size:11px;min-height:38px}
+.discovery-sources {border-top:1px solid var(--ink);padding:20px 0;font-size:11px;line-height:1.6}
+.discovery-sources>p+p {margin-top:6px}
+@keyframes restaurant-reveal {from {opacity:.65;transform:translateY(10px);clip-path:inset(0 0 2% 0)} to {opacity:1;transform:none;clip-path:inset(0)}}
+@keyframes discovery-float {0%,100% {transform:rotateY(0) translateY(0)} 50% {transform:rotateY(5deg) translateY(-8px)}}
+@keyframes discovery-spin {to {transform:rotate(360deg)}}
+@media(max-width:1000px) {.discovery-heading-note {min-width:190px}.restaurant-spotlight {gap:30px}.restaurant-photo>img,.restaurant-photo-placeholder {height:390px}.discovery-location-row {gap:14px}.discover-near {padding:14px 18px}.discovery-city-form {min-width:220px}.discovery-or {display:none}}
+@media(max-width:700px) {.restaurant-discovery {margin:16px 6% 40px}.discovery-rule>span {font-size:10px}.discovery-heading {align-items:flex-start;margin-top:26px}.discovery-heading h2 {font-size:58px}.discovery-heading-note {display:none}.discovery-heading>div>p {font-size:17px}.discovery-location-row {display:grid;grid-template-columns:1fr auto;gap:20px 12px}.discover-near {grid-column:1 / -1;justify-self:start;min-height:60px}.discovery-city-form {min-width:0}.discovery-radius select {max-width:130px;padding:10px;font-size:12px}.discovery-city-field input {font-size:14px}.discovery-city-field>svg {display:none}.discovery-city-choices ul {grid-template-columns:1fr}.discovery-clear {justify-self:start}.discovery-invitation {grid-template-columns:1fr;gap:12px;padding-top:28px}.discovery-still-life {min-height:260px;max-width:420px}.discovery-still-life .food-art {height:260px}.discovery-status {padding:28px 18px;gap:16px}.discovery-status p {font-size:14px}.restaurant-carousel-heading>p {font-size:23px;max-width:140px}.restaurant-carousel-controls {gap:8px}.restaurant-carousel-controls button {width:48px;height:48px;min-height:48px}.restaurant-spotlight {grid-template-columns:1fr;gap:30px;padding-top:24px}.restaurant-photo>img,.restaurant-photo-placeholder {height:320px}.restaurant-photo figcaption {font-size:10px}.restaurant-story h3 {font-size:52px}.culinary-fact {min-height:0}.restaurant-explore {width:100%;justify-content:space-between}.discovery-privacy {font-size:11px}.discovery-stamp {width:96px;height:96px;font-size:11px}}
+@media(prefers-reduced-motion:reduce) {.restaurant-discovery * {animation:none!important;transition:none!important}.discovery-still-life .food-art {transform:none}}
+.restaurant-discovery .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.discovery-license {font-size:11px;line-height:1.5;margin-top:4px}
+
+.discovery-rule>.editorial-label {color:var(--ink)}
+
+.image-tone-defs {position:absolute;pointer-events:none}

@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=ON;
+PRAGMA journal_mode=WAL;
+CREATE TABLE IF NOT EXISTS users(id TEXT PRIMARY KEY,name TEXT NOT NULL,username TEXT NOT NULL UNIQUE,password TEXT NOT NULL,discoverable INTEGER NOT NULL DEFAULT 1,default_visibility TEXT NOT NULL DEFAULT 'friends',created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS sessions(token TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,expires INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS friendships(id TEXT PRIMARY KEY,sender TEXT NOT NULL REFERENCES users(id),recipient TEXT NOT NULL REFERENCES users(id),status TEXT NOT NULL CHECK(status IN ('pending','accepted')),pair TEXT NOT NULL UNIQUE,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS restaurants(id TEXT PRIMARY KEY,name TEXT NOT NULL,cuisine TEXT NOT NULL,address TEXT NOT NULL,lat REAL NOT NULL,lng REAL NOT NULL,source TEXT NOT NULL,source_url TEXT NOT NULL,normalized TEXT NOT NULL UNIQUE);
+CREATE INDEX IF NOT EXISTS restaurant_bounds ON restaurants(lat,lng);
+CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id),restaurant_id TEXT NOT NULL REFERENCES restaurants(id),rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 5),body TEXT NOT NULL,dishes TEXT NOT NULL,price TEXT,visibility TEXT NOT NULL CHECK(visibility IN ('public','friends','private')),created_at TEXT NOT NULL,UNIQUE(user_id,restaurant_id));
+CREATE INDEX IF NOT EXISTS review_place ON reviews(restaurant_id);
+CREATE TABLE IF NOT EXISTS photos(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id),review_id TEXT REFERENCES reviews(id),created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS saved(user_id TEXT NOT NULL REFERENCES users(id),restaurant_id TEXT NOT NULL REFERENCES restaurants(id),PRIMARY KEY(user_id,restaurant_id));
